@@ -1,0 +1,27 @@
+{
+  "name": "prog-101-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "tsc --watch & browser-sync start --server --files \"**/*.html, **/*.css, dist/**/*.js\" --port 3000 --no-notify --no-open --listen localhost",
+    "start": "node dist/main.js",
+    "serve": "browser-sync start --server --files \"**/*.html, **/*.css, dist/**/*.js\" --port 3000 --listen localhost",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "browser-sync": "^3.0.4",
+    "stylelint": "^16.25.0",
+    "stylelint-config-recess-order": "^7.4.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-order": "^7.0.0",
+    "typescript": "^5.9.3"
+  }
+}
