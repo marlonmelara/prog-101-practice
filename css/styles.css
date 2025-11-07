@@ -11,10 +11,50 @@ body {
   background-color: #333;
 }
 
-h1 {
+.header__return-home {
+  display: block;
+  max-width: 120px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #233;
+  text-align: center;
+  text-decoration: none;
+  background-color: salmon;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.menu__li {
+  list-style: none;
+}
+
+.menu__a {
+  display: block;
+  max-width: 400px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #223;
+  text-align: center;
+  text-decoration: none;
+  background-color: salmon;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+}
+
+.header__h1 {
   margin-bottom: 1rem;
 }
 
-p {
+.header__p {
   color: #ddd;
 }

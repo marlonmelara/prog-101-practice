@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo BEM - Tarjeta de Producto</title>
+    <style>
+      /* BLOCK: card */
+      .card {
+        max-width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+
+      /* ELEMENT: card__image */
+      .card__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* ELEMENT: card__body */
+      .card__body {
+        padding: 20px;
+      }
+
+      /* ELEMENT: card__title */
+      .card__title {
+        font-size: 1.5rem;
+        margin: 0 0 10px 0;
+        color: #333;
+      }
+
+      /* ELEMENT: card__description */
+      .card__description {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      /* ELEMENT: card__price */
+      .card__price {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #2ecc71;
+        margin-bottom: 15px;
+      }
+
+      /* ELEMENT: card__button */
+      .card__button {
+        width: 100%;
+        padding: 12px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      /* MODIFIER: card--featured (tarjeta destacada) */
+      .card--featured {
+        border: 2px solid #f39c12;
+        box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+      }
+
+      /* MODIFIER: card__button--disabled */
+      .card__button--disabled {
+        background-color: #95a5a6;
+        cursor: not-allowed;
+      }
+
+      /* MODIFIER: card__price--discount */
+      .card__price--discount {
+        color: #e74c3c;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tarjeta Normal -->
+    <div class="card">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Producto"
+        class="card__image"
+      />
+      <div class="card__body">
+        <h2 class="card__title">Laptop Pro</h2>
+        <p class="card__description">
+          Potente laptop ideal para profesionales y creativos.
+        </p>
+        <div class="card__price">$999</div>
+        <button class="card__button">Agregar al carrito</button>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <!-- Tarjeta Destacada con Descuento -->
+    <div class="card card--featured">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Producto destacado"
+        class="card__image"
+      />
+      <div class="card__body">
+        <h2 class="card__title">Smartphone X</h2>
+        <p class="card__description">
+          El smartphone más avanzado del mercado con descuento especial.
+        </p>
+        <div class="card__price card__price--discount">$699</div>
+        <button class="card__button">Agregar al carrito</button>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <!-- Tarjeta con Botón Deshabilitado -->
+    <div class="card">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Producto agotado"
+        class="card__image"
+      />
+      <div class="card__body">
+        <h2 class="card__title">Tablet Mini</h2>
+        <p class="card__description">
+          Tablet compacta perfecta para entretenimiento.
+        </p>
+        <div class="card__price">$299</div>
+        <button class="card__button card__button--disabled" disabled>
+          Agotado
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
