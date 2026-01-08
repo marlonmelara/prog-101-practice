@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Conversor de kilómetros a millas - Herramienta simple para convertir distancias"
+      content="Kilometers to Miles Converter – Simple tool for converting distances"
     />
-    <link rel="stylesheet" href="/css/km-to-miles.css" />
-    <title>Conversor de Kilómetros a Millas</title>
+    <link rel="stylesheet" href="/css/styles-components.css" />
+
+    <title>Kilometers to Miles Converter</title>
   </head>
   <body>
     <header class="header">
-      <a class="header__return-home" href="/">Return home</a>
-      <h1 class="header__h1">Conversor de Kilómetros a Millas</h1>
+      <a class="header__return-home" href="/">HOME</a>
+      <h1 class="header__h1">Kilometers to Miles Converter</h1>
     </header>
 
     <main class="main">
@@ -23,13 +24,13 @@
         aria-label="Formulario de conversión de distancias"
       >
         <div class="form__content">
-          <label for="kmInput" class="form__label">Kilómetros</label>
+          <label for="kmInput" class="form__label">Kilometers</label>
           <input
             id="kmInput"
             class="form__input"
             type="number"
             step="0.1"
-            placeholder="Ingresa la distancia"
+            placeholder="Enter the distance"
             aria-describedby="conversionInfo"
             required
           />
@@ -37,7 +38,7 @@
 
         <div class="form__arrow" aria-hidden="true">↓</div>
 
-        <button type="submit" class="form__button">Convertir a Millas</button>
+        <button type="submit" class="form__button">Convert to Miles</button>
       </form>
 
       <div
@@ -45,11 +46,11 @@
         id="resultOutput"
         role="status"
         aria-live="polite"
-        aria-label="Resultado de la conversión"
+        aria-label="Conversion result"
       ></div>
 
       <small id="conversionInfo" class="main__conv-rate">
-        1 kilómetro = 0.621371 millas
+        1 kilometer = 0.621371 miles
       </small>
     </main>
 

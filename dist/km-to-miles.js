@@ -4,10 +4,10 @@
 const KM_TO_MILE_FACTOR = 0.621371;
 function convertKMtoMI(km) {
     if (km <= 0) {
-        return 'Tienes que poner un número positivo';
+        return 'You must enter a positive number';
     }
     const miles = km * KM_TO_MILE_FACTOR;
-    return `${km} kilómetros es igual a ${miles.toFixed(1)} millas`;
+    return `${km} kilometers is equal to ${miles.toFixed(1)} miles`;
 }
 // ✅ Esperamos a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {

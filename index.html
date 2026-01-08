@@ -3,31 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>prog-101-practice</title>
+    <!-- Meta descripción importante para SEO -->
+    <meta
+      name="description"
+      content="Colección de ejercicios de lógica de programación en TypeScript, HTML y CSS."
+    />
+    <title>Programing 101 - Practical Exercises</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <h1 class="header__h1">Hello, prog-101-practice!</h1>
-      <p class="header__p">Check the console for TypeScript output.</p>
-      <nav class="header__nav">
-        <a class="header__a" href="/" class="logo">
-          <img src="" alt="" loading="lazy" />
-        </a>
-        <ul class="menu">
-          <li class="menu__li">
-            <a class="menu__a" href="/html/km-to-miles.html"
-              >Km to Miles Conversor</a
-            >
-          </li>
-          <li class="menu__li">
-            <a class="menu__a" href="/html/area-triangle-calculator.html"
-              >Area Triangle Calculator</a
-            >
-          </li>
-        </ul>
-      </nav>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Hello, prog-101-practice!</h1>
+        <p class="header__subtitle">Check the console for TypeScript output.</p>
+      </div>
     </header>
+
+    <!-- Projects Grid -->
+    <main class="projects-grid">
+      <!-- Card (Artículo 1) -->
+      <article class="card">
+        <a href="/html/km-to-miles.html" class="card__link">
+          <div class="card__header">
+            <span class="card__icon">📏</span>
+            <h2 class="card__title">Km to Miles Conversor</h2>
+          </div>
+          <p class="card__description">
+            Simple distance unit converter. Implements basic multiplication
+            logic and handling of numeric inputs.
+          </p>
+          <div class="card__footer">
+            <span class="card__label">Tech Stack</span>
+            <ul class="tech-stack">
+              <li class="tech-stack__item tech-stack__item--ts">TS</li>
+              <li class="tech-stack__item tech-stack__item--html">HTML</li>
+              <li class="tech-stack__item tech-stack__item--css">CSS</li>
+            </ul>
+          </div>
+        </a>
+      </article>
+
+      <!-- (Artículo 2) -->
+      <article class="card">
+        <a href="/html/area-triangle-calculator.html" class="card__link">
+          <div class="card__header">
+            <span class="card__icon">📐</span>
+            <h2 class="card__title">Triangle Area</h2>
+          </div>
+          <p class="card__description">
+            Interactive geometric calculator that applies mathematical formulas
+            for accurate results.
+          </p>
+          <div class="card__footer">
+            <span class="card__label">Tech Stack</span>
+            <ul class="tech-stack">
+              <li class="tech-stack__item tech-stack__item--ts">TS</li>
+              <li class="tech-stack__item tech-stack__item--html">HTML</li>
+              <li class="tech-stack__item tech-stack__item--css">CSS</li>
+            </ul>
+          </div>
+        </a>
+      </article>
+    </main>
 
     <script type="module" src="dist/main.js"></script>
   </body>

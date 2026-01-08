@@ -1,10 +1,10 @@
 "use strict";
 function areaCalculation(base, height) {
     if (base <= 0 || height <= 0) {
-        return 'Tienes que poner un número positivo';
+        return 'You must enter a positive number';
     }
     const area = (base * height) / 2;
-    return `El área del triángulo rectángulo es ${area}`;
+    return `The area of the right triangle is ${area}`;
 }
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('calculatorForm');

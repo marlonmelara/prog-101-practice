@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/area-triangle-calculator.css" />
-    <title>Calculadora de área de triángulo</title>
+    <link rel="stylesheet" href="/css/styles-components.css" />
+    <title>Triangle Area Calculator</title>
   </head>
   <body>
     <header class="header">
-      <a class="header__return-home" href="/">Return home</a>
-      <h1>Calculadora de área de triángulo</h1>
+      <a class="header__return-home" href="/">HOME</a>
+      <h1>Triangle Area Calculator</h1>
     </header>
 
     <main class="main">
@@ -25,7 +24,7 @@
             class="form__input"
             required
           />
-          <label for="heightInput"> Altura: </label>
+          <label for="heightInput"> Height: </label>
           <input
             type="number"
             id="heightInput"
@@ -37,7 +36,7 @@
 
         <div class="form__arrow" aria-hidden="true">↓</div>
 
-        <button type="submit" class="form__button">Calcular área</button>
+        <button type="submit" class="form__button">Calculate area</button>
       </form>
 
       <div
@@ -45,12 +44,12 @@
         id="resultOutput"
         role="status"
         aria-live="polite"
-        aria-label="Resultado del cálculo"
+        aria-label="Result"
       ></div>
     </main>
 
     <footer>
-      <p>Todos los derechos reservados.</p>
+      <p>All rights reserved.</p>
     </footer>
 
     <script src="/dist/area-triangle-calculator.js"></script>

@@ -1,3 +1,37 @@
+/* /Root: Variables Globales para un diseño consistente */
+:root {
+  /* Paleta de Colores Minimalista */
+  --bg-body: #f3f4f6; /* Gris muy suave para el fondo general */
+  --bg-card: #fff; /* Blanco puro para las tarjetas */
+  --text-main: #111827; /* Casi negro para títulos (menos agresivo que #000) */
+  --text-muted: #6b7280; /* Gris medio para descripciones */
+  --border-light: #e5e7eb; /* Bordes sutiles */
+
+  /* Colores de Acento (Branding de tecnologías) */
+  --brand-ts: #3178c6;
+  --brand-js: #f7df1e;
+  --brand-html: #e34f26;
+  --brand-css: rebeccapurple;
+  --text-inverse: #fff;
+  --text-dark: #1f2937;
+
+  /* Espaciado y Dimensiones */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 3rem; /* 48px */
+  --radius-card: 16px; /* Bordes redondeados modernos */
+
+  /* Sombras suaves (Elevation) */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -2px rgb(0 0 0 / 5%);
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* /Reset básico */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,60 +39,163 @@
 }
 
 body {
-  padding: 2rem;
-  font-family: system-ui, -apple-system, sans-serif;
-  color: #fff;
-  background-color: #333;
+  min-height: 100vh;
+  padding: var(--spacing-md);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-body);
 }
 
-.header__return-home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 120px;
-  height: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: #524f4f;
+/* /UI: Estilos BEM */
+
+/* Bloque: Header */
+.header {
+  padding: var(--spacing-md) 0;
+  margin-bottom: var(--spacing-lg);
   text-align: center;
-  text-decoration: none;
-  background-color: salmon;
-  border: solid 1px #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 }
 
-.menu {
+.header__title {
+  margin-bottom: var(--spacing-xs);
+  font-size: 2.25rem;
+  font-weight: 800; /* Extra bold para contraste */
+  color: var(--text-main);
+  letter-spacing: -0.025em; /* Tracking negativo moderno */
+}
+
+.header__subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+/* Bloque: Grid Layout (Contenedor de tarjetas) */
+
+/* /GridFlex: Uso de CSS Grid para layout responsivo automático */
+.projects-grid {
+  display: grid;
+
+  /* La magia: columnas que se adaptan. Mínimo 320px, máximo 1fr */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Bloque: Card (Tarjeta de proyecto) */
+.card {
   display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden; /* Para que nada se salga de los bordes redondeados */
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
-.menu__li {
+/* Modificador de estado: Hover en la tarjeta */
+.card:hover {
+  border-color: transparent; /* El borde desaparece para dar paso a la sombra */
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px); /* Sutil elevación */
+}
+
+/* Elemento: Enlace que cubre toda la tarjeta */
+.card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--spacing-md);
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Elemento: Cabecera de la tarjeta */
+.card__header {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card__icon {
+  padding: 0.5rem;
+  font-size: 1.75rem;
+  line-height: 1;
+  background-color: var(--bg-body);
+  border-radius: 12px;
+}
+
+.card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Elemento: Descripción */
+.card__description {
+  flex-grow: 1; /* /GridFlex: Empuja el footer hacia abajo */
+  margin-bottom: var(--spacing-md);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Elemento: Footer de la tarjeta */
+.card__footer {
+  padding-top: var(--spacing-sm);
+  margin-top: auto;
+  border-top: 1px solid var(--border-light);
+}
+
+.card__label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Bloque: Tech Stack (Lista de tecnologías) */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   list-style: none;
 }
 
-.menu__a {
-  display: block;
-  max-width: 400px;
-  padding: 1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #223;
-  text-align: center;
-  text-decoration: none;
-  background-color: salmon;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+/* Elemento: Item de tecnología */
+.tech-stack__item {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+
+  /* Fallback color */
+  background-color: var(--border-light);
+  border-radius: 6px;
 }
 
-.header__h1 {
-  margin-bottom: 1rem;
+/* Modificadores BEM para cada tecnología */
+.tech-stack__item--ts {
+  color: var(--text-inverse);
+  background-color: var(--brand-ts);
 }
 
-.header__p {
-  color: #ddd;
+.tech-stack__item--js {
+  color: var(--text-dark); /* Texto oscuro para fondo amarillo */
+  background-color: var(--brand-js);
+}
+
+.tech-stack__item--html {
+  color: var(--text-inverse);
+  background-color: var(--brand-html);
+}
+
+.tech-stack__item--css {
+  color: var(--text-inverse);
+  background-color: var(--brand-css);
 }
